@@ -14,7 +14,7 @@
     tags: ntp
  
   - name: Make sure NTP is started up
-    service: name=chrony state=running enabled=yes
+    service: name=chrony state=started enabled=yes
     tags: ntp
 
   - name: Sync hwclock
