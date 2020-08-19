@@ -21,6 +21,6 @@
     shell: hwclock -w
     tags: ntp
     
-   handlers:
+  handlers:
    - name: restart chronyd
      service: name=chronyd state=restarted
