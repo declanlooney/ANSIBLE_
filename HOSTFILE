@@ -1,0 +1,12 @@
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+10.10.20.4  	LOONDC01  	LOONDC01.declanlooney.com
+10.10.20.5  	LOONDNS01 	LOONDNS01.declanlooney.com
+10.10.20.6  	LOONDNS02	LOONDNS02.declanlooney.com
+10.10.20.7  	LOONNTP01	LOONNTP01.declanlooney.com
+10.10.20.8  	LOONNTP02	LOONNTP02.declanlooney.com
+10.10.20.9  	LOONAWX01	LOONAWX01.declanlooney.com
+10.10.20.10 	LOONDUO01	LOONDUO01.declanlooney.com
+10.10.20.11 	LOONNAS01	LOONNAS01.declanlooney.com
+10.10.20.14 	LOONZABBIX01	LOONZABBIX01.declanlooney.com
+10.10.20.17 	LOONIPAM01	LOONIPAM01.declanlooney.com

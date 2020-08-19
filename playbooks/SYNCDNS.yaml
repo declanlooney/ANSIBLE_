@@ -1,0 +1,4 @@
+- hosts: all
+  tasks:
+  - name: Sync DNS
+    template: src=/var/lib/awx/projects/update/resources/dns.txt dest=/etc/hosts
