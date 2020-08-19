@@ -10,11 +10,11 @@
   - name: Copy over the NTP configuration
     template: src=/var/lib/awx/projects/update/resources/chronyclient.conf dest=/etc/chrony.conf
     notify:
-    - restart chrony
+    - restart chronyd
     tags: ntp
  
   - name: Make sure NTP is started up
-    service: name=chrony state=started enabled=yes
+    service: name=chronyd state=started enabled=yes
     tags: ntp
 
   - name: Sync hwclock
