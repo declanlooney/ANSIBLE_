@@ -20,3 +20,7 @@
   - name: Sync hwclock
     shell: hwclock -w
     tags: ntp
+    
+   handlers:
+   - name: restart chronyd
+     service: name=chronyd state=restarted
