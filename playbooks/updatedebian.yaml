@@ -1,0 +1,8 @@
+- hosts:
+    - debian, unifi
+  tasks:
+      - name: update the system
+        apt:
+          name: "*"
+          state: latest
+        become: yes

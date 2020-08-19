@@ -1,0 +1,31 @@
+- hosts:
+    - centos
+  tasks:
+      - name: update the system
+        yum:
+          name: "*"
+          state: latest
+        become: yes
+     
+      - name: install epel-release
+        yum:
+          name: cloud-init
+          state: latest
+        become: yes
+
+- hosts:
+    - debian
+  tasks:
+      - name: update the system
+        yum:
+          name: "*"
+          state: latest
+        become: yes
+
+      - name: install epel-release
+        apt:
+          name: cloud-init
+          state: latest
+        become: yes
+
+

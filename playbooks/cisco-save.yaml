@@ -1,0 +1,8 @@
+---
+-  hosts: cisco_ios
+
+   tasks: 
+    - name: save ios
+      ios_command:
+       commands: "write mem"
+ 
