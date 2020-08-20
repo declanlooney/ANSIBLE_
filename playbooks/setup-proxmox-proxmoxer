@@ -1,0 +1,9 @@
+- hosts: all
+  tasks:
+  - name: Install Pip
+    apt: name=python-pip state=latest 
+  - name: Install proxmoxer
+    pip: name=proxmoxer state=latest 
+ 
+
+ 
