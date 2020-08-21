@@ -2,3 +2,5 @@
   tasks:
   - name: Sync DNS
     template: src=/var/lib/awx/projects/update/resources/HOSTFILE dest=/etc/hosts
+  - name: restart server
+    shell: "sleep 5 && reboot"
