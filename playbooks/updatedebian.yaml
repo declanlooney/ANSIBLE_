@@ -1,5 +1,5 @@
 - hosts:
-    - all
+    - debian, unifi
   tasks:
       - name: update the system
         apt:

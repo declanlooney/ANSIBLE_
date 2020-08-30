@@ -1,9 +1,9 @@
 ---
- - hosts: all
+ - hosts: root
    vars:
      - devops_password: '1217Decker'
    gather_facts: no
-   remote_user: root
+   remote_user: nexpose
    become: true
    tasks:
    - name: Add a new user named devops

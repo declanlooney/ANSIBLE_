@@ -1,26 +1,35 @@
-- hosts: all
+- hosts: debian
   tasks:
   - name: set timezone
     shell: timedatectl set-timezone America/Detroit
-
+    become: yes
+    
   - name: Install NTP
     apt: name=chrony state=latest 
     tags: ntp
- 
+    become: yes
+    
+  - name: Delete Current configuration
+    shell: rm -f /etc/chrony.conf
+    become: yes
+    
   - name: Copy over the NTP configuration
-    template: src=/var/lib/awx/projects/update/resources/chronyclient.conf dest=/etc/chrony.conf
+    template: src=/etc/chrony.conf dest=/etc/chrony.conf
     notify:
     - restart chronyd
     tags: ntp
- 
+    become: yes
+    
   - name: Make sure NTP is started up
     service: name=chronyd state=started enabled=yes
     tags: ntp
-
+    become: yes
+    
   - name: Sync hwclock
     shell: hwclock -w
     tags: ntp
-    
+    become: yes
   handlers:
    - name: restart chronyd
      service: name=chronyd state=restarted
+     become: yes

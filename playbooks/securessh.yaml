@@ -1,0 +1,26 @@
+---
+ - hosts: all
+   become: true
+   tasks:
+   - name: Limit SSH Ciphers
+     lineinfile:
+           dest=/etc/ssh/sshd_config
+           regexp='^ciphers'
+           line="ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr"
+           state=present
+           backup=yes
+   - name: Limit SSH KEYALG
+     lineinfile:
+           dest=/etc/ssh/sshd_config
+           regexp='^KexAlgorithms'
+           line="KexAlgorithms diffie-hellman-group-exchange-sha256,curve25519-sha256@libssh.org,"
+           state=present
+           backup=yes
+
+     notify:
+       - restart ssh
+   handlers:
+   - name: restart ssh
+     service:
+       name=sshd
+       state=restarted

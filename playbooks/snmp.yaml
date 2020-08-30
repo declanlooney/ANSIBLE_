@@ -1,0 +1,11 @@
+- hosts: debian
+  tasks:
+  - name: Install snmp
+    apt: name=snmpd state=latest
+    become: yes 
+  - name: Sync snmp
+    template: src=/etc/snmp/snmpd.conf  dest=/etc/snmp/snmpd.conf
+    become: yes
+  - name: Restrart  snmp
+    service: name=snmpd  state=started
+    
